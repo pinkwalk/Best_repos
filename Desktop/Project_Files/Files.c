@@ -55,6 +55,7 @@ char fullarray(FILE *fp, char *array[])
 		}
 	}
 	int noWords = noSpace + 1;
+	string words[noWords];
 	for (size_t i = 0; i < sizeof(*array[i]); i++)
 	{
 		if (isgraph(i))
@@ -62,9 +63,10 @@ char fullarray(FILE *fp, char *array[])
 			strcat(word, *array[i]);
 		}
 		else
-			{
-				words[noWord] = word;
-				word = "";
-				noWord++;
-			}
+		{
+			words[noWord] = word;
+			word = "";
+			noWord++;
+		}
+	}
 }
